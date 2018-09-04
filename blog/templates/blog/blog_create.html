@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+ {% load static %}
+
+{% block content %}
+  <section class="p-0" id="portfolio"> 
+    <div class="create-blog">
+    	<h2> Create New Blog </h2>
+    	<form class="site-form" action="{% url 'blog:create' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+    		{{ form }}
+    		<input type="submit" value="Create">
+    	</form>
+    	
+    </div>
+
+  </section>
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+ {% load static %}
+
+{% block content %}
+    <title>Active Challenge</title>
+    <div class="container">
+      <h3>Active Challenge list</h3>
+      <div class="blog">
+        {% for blog in blog %}
+    	  <div class="blog">
+    		  <h2><a href="{% url 'blog:detail' slug=blog.slug %}">{{ blog.title }}</a></h2>
+    		  <p>{{ blog.snippet }}</p>
+    		  <p>{{ blog.date }}</p>
+    		  <p class="author">added by {{ blog.author.username}}</p>
+    	  </div>
+        {% endfor %}
+      </div>
+    
+    </div>
+{% endblock %}
